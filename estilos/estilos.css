@@ -1,0 +1,300 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: grid;
+    width: 100%;
+    place-items: center;
+    counter-reset: score;
+}
+.phone{
+    width: 300px;
+    height: 600px;
+    border: 5px solid black;
+    border-radius: 40px;
+    position: relative;
+    background: #3ca6d8;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.ear1, 
+.ear2{
+    background: white;
+    width: 20px;
+    height: 60px;
+    position: absolute;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.ear1{
+    top: -30px;
+    left: 10px;
+}
+.ear2{
+    top: -30px;
+    left: 50px;
+}
+.ear-pink1,
+.ear-pink2 {
+    background: #ffbec6;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+}
+.ear-pink1{
+    top: 7px;
+    left: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.ear-pink2{
+    top: 7px;
+    left: 6px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.eye1{
+    left: 25px;
+    top: 20px;
+}
+.eye2{
+    left: 45px;
+    top: 20px;
+}
+.eye1,
+.eye2 {
+    background-color: black;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;   
+}
+@keyframes blink {
+    0%{
+        height: 8px;
+    }
+    5%{
+        transform: translate(0px, 2px);
+        height: 1px;
+    }
+    10%{
+        transform: translate(0px, 0px);
+        height: 8px;
+    }
+}
+.head{
+    background: white;
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    top: -5px;
+}
+.layer{
+    position: absolute;
+
+}
+.layer-1{
+    z-index: 1;
+    height: 200px;
+    width: 80px;
+    background-color: white;
+    right: 60px;
+    top: 150px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    animation-name: layer-1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer-1 {
+    0%{
+        top: 150px;
+    }
+    50%{
+        top: 250px;
+    }
+    100%{
+        bottom: 150px;
+    }
+}
+.layer-1 input[type=checkbox]{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    margin-left: 15px;
+    margin-right: 12px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    appearance: none;
+}
+input[type=checkbox]:focus{
+    appearance: none;
+    outline: none;
+}
+input:checked{
+    counter-increment: score;
+}
+.score::after{
+    content: counter(score);
+}
+.layer-2{
+    z-index: 2;
+    height: 200px;
+    width: 80px;
+    background-color: white;
+    top: 150px;
+    left: 60px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    animation-name: layer-2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;        
+}
+@keyframes layer-2 {
+    0%{
+        top: 150px;
+    }
+    50%{
+        top: 250px;
+    }
+    100%{
+        bottom: 150px;
+    }
+}
+.layer-3{
+    z-index: 3;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    width: 220px;
+    height: 400px;
+    background: #ba6d4f;
+    bottom: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.grass{
+    width: 220px;
+    height: 30px;
+    background-color: #479447;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.shadow{
+    width: 55px;
+    height: 40px;
+    background-color: #9b5e46;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.circle{
+    width: 55px;
+    height: 40px;
+    background-color: #479447;
+    border-radius: 50%;
+    position: absolute;
+}
+.c-1{
+    bottom: 350px;
+}    
+.layer-4{
+    z-index: 4;
+    height: 200px;
+    width: 80px;
+    background-color: white;
+    left: 20px;
+    top: 240px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;  
+    animation-name: layer-4;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;        
+}
+@keyframes layer-4 {
+    0%{
+        top: 240px;
+    }
+    50%{
+        top: 350px;
+    }
+    100%{
+        bottom: 240px;
+    }
+}
+.layer-5{
+    z-index: 5;
+    margin: 0 auto;
+    width: 220px;
+    height: 310px;
+    background: #ba6d4f;
+    top: 290px;
+    right: 80px;
+    border-bottom-left-radius: 34px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 9px -6px 15px -4px rgba(0,0,0,0.62);
+}
+.c-2{
+    bottom: 260px;
+}
+.layer-6{
+    z-index: 6;
+    height: 160px;
+    width: 80px;
+    background-color: white;
+    left: 200px;
+    top: 320px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    animation-name: layer-6;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;        
+}
+@keyframes layer-6 {
+    0%{
+        top: 320px;
+    }
+    50%{
+        top: 420px;
+    }
+    100%{
+        bottom: 320px;
+    }
+}
+.layer-7{
+    z-index: 7;
+    margin: 0 auto;
+    width: 220px;
+    height: 230px;
+    background: #ba6d4f;
+    top: 370px;
+    left: 80px;
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow:-6px 0px 15px 0px rgba(0,0,0,0.6);
+}
+.c-3{
+    bottom: 180px;
+}
+.layer-8{
+    z-index: 8;       
+}
+.layer-9{
+    z-index: 9;
+}
+.layer-10{
+    z-index: 10;                    
+}
